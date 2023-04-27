@@ -18,23 +18,15 @@ if (args.h) {
     process.exit(0)
 }
 
-if (!(args.n || args.s) || !(args.e || args.w)) {
-    console.log("latitude or longitude not specified")
-    process.exit(1)
-}
 const latitude = args.n || -args.s
 const longitude = args.e || -args.w
 
-const day = args.d || 1
-if (day < 0 || day > 6) {
-    console.log("day field must be 0-6")
-}
 
 const url = "https://api.open-meteo.com/v1/forecast"
-            + "?latitude=" + latitude 
-            + "&longitude=" + longitude
-            + "&timezone=" + timezone
-            + "&daily=precipitation_hours"
++ "?latitude=" + latitude 
++ "&longitude=" + longitude
++ "&timezone=" + timezone
++ "&daily=precipitation_hours"
 
 const response = await fetch(url)
 const data = await response.json()
@@ -42,6 +34,16 @@ const data = await response.json()
 if (args.j) {
     console.log(data)
     process.exit(0)
+}
+
+if (!(args.n || args.s) || !(args.e || args.w)) {
+    console.log("latitude or longitude not specified")
+    process.exit(1)
+}
+
+const day = args.d || 1
+if (day < 0 || day > 6) {
+    console.log("day field must be 0-6")
 }
 
 var output = ""

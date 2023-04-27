@@ -1,0 +1,11 @@
+{
+  "name": "galosh",
+  "version": "1.0.0",
+  "description": "This assignment will help you learn to create an installable Node.js command line utility.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node cli.js -n 35.92 -w 79.05 -z America/New_York"
+  },
+  "author": "sujaysj",
+  "license": "GPL-3.0-or-later"
+}

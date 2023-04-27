@@ -41,7 +41,11 @@ if (args.j) {
     exit(0)
 }
 
-if (data.daily.precipitation_hours[day]) 
+if (data.daily.precipitation_hours[day] == 0) {
+    console.log("You might need your galoshes ")
+} else {
+    console.log("You will not need your galoshes ")
+}
 
 if (day == 0) {
     console.log("today.")

@@ -16,10 +16,37 @@ if (args.h) {
 }
 
 if (!(args.n || args.s) || !(args.e || args.w)) {
-    console.log("arguments not recognized")
+    console.log("latitude or longitude not specified")
     exit(1)
 }
 const latitude = args.n || -args.s
 const longitude = args.e || -args.w
 
 const day = args.d || 1
+if (day < 0 || day > 6) {
+    console.log("days field must be 0-6")
+}
+
+const url = "https://api.open-meteo.com/v1/forecast"
+            + "?latitude=" + latitude 
+            + "&longitude=" + longitude
+            + "&timezone=" + timezone
+            + "&daily=precipitation_hours"
+
+const response = await fetch(url)
+const data = await response.json()
+
+if (args.j) {
+    console.log(data)
+    exit(0)
+}
+
+if (data.daily.precipitation_hours[day]) 
+
+if (day == 0) {
+    console.log("today.")
+} else if (days == 1) {
+    console.log("tomorrow.")
+} else {
+    console.log("in " + days + " days.")
+}

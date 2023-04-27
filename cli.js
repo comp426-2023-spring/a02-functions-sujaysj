@@ -44,16 +44,19 @@ if (args.j) {
     exit(0)
 }
 
+const output = ""
 if (data.daily.precipitation_hours[day] == 0) {
-    console.log("You will not need your galoshes ")
+    output += "You will not need your galoshes "
 } else {
-    console.log("You might need your galoshes ")
+    output += "You might need your galoshes "
 }
 
 if (day == 0) {
-    console.log("today.")
+    output += "today."
 } else if (day == 1) {
-    console.log("tomorrow.")
+    output += "tomorrow."
 } else {
-    console.log("in " + day + " days.")
+    output += "in " + day + " days."
 }
+
+console.log(output)

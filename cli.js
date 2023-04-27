@@ -42,9 +42,9 @@ if (args.j) {
 }
 
 if (data.daily.precipitation_hours[day] == 0) {
-    console.log("You might need your galoshes ")
-} else {
     console.log("You will not need your galoshes ")
+} else {
+    console.log("You might need your galoshes ")
 }
 
 if (day == 0) {

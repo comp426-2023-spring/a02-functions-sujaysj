@@ -41,7 +41,10 @@ if (!(args.n || args.s) || !(args.e || args.w)) {
     process.exit(1)
 }
 
-const day = args.d || 1
+const day = 1
+if (args.d !== undefined) {
+    day = args.d
+}
 if (day < 0 || day > 6) {
     console.log("day field must be 0-6")
 }

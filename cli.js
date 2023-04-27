@@ -1,7 +1,9 @@
 #!/usr/bin/env node
 
-const args = require('minimist')(process.argv.slice(2))
-const moment = require('moment')
+import minimist from 'minimist'
+import moment from 'moment-timezone'
+
+const args = minimist(process.argv.slice(2))
 const timezone = args.z || moment.tz.guess()
 
 if (args.h) {

@@ -41,7 +41,7 @@ if (!(args.n || args.s) || !(args.e || args.w)) {
     process.exit(1)
 }
 
-const day = 1
+var day = 1
 if (args.d !== undefined) {
     day = args.d
 }

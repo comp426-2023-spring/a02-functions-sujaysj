@@ -27,7 +27,7 @@ const longitude = args.e || -args.w
 
 const day = args.d || 1
 if (day < 0 || day > 6) {
-    console.log("days field must be 0-6")
+    console.log("day field must be 0-6")
 }
 
 const url = "https://api.open-meteo.com/v1/forecast"
@@ -52,8 +52,8 @@ if (data.daily.precipitation_hours[day] == 0) {
 
 if (day == 0) {
     console.log("today.")
-} else if (days == 1) {
+} else if (day == 1) {
     console.log("tomorrow.")
 } else {
-    console.log("in " + days + " days.")
+    console.log("in " + day + " days.")
 }

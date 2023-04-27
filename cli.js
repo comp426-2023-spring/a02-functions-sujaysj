@@ -44,7 +44,7 @@ if (args.j) {
     exit(0)
 }
 
-const output = ""
+var output = ""
 if (data.daily.precipitation_hours[day] == 0) {
     output += "You will not need your galoshes "
 } else {
